@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "OSR.MigrateDatabase": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Docker"
+      }
+    }
+  }
+}

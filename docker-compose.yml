@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  osr.web.api:
+    image: osrwebapi
+    build:
+      context: .
+      dockerfile: OSR.Web.Api/Dockerfile
+    depends_on:               # launch myapi service until the other services have started
+      - sqldb
+
+  sqldb:
+    image: microsoft/mssql-server-linux:2017-latest
+    container_name: osr-mssql
+    hostname: mssql
+    ports:
+      - 1403:1433
+      #- 8011:1434
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=whatever12!
