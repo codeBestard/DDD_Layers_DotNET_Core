@@ -1,0 +1,12 @@
+language: csharp
+os: linux
+dist: trusty
+sudo: required
+dotnet: 2.1.401
+
+before_install:
+  - dotnet --info
+
+script:
+ - dotnet build  ./DDD.OnlineSchoolRegistration.sln
+ - dotnet test ./Tests/OSR.Domain.UnitTests

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using OSR.Domain.Common;
 using OSR.Domain.Common.Exceptions;
 using OSR.Domain.Common.ValueObjects;
 using OSR.Domain.Events.Course;
 
+[assembly: InternalsVisibleTo( "OSR.Domain.UnitTests" )]
 namespace OSR.Domain
 {
     public class CourseDM : Entity<Guid>, IAggregateRoot
