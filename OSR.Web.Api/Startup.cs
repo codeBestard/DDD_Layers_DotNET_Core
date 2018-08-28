@@ -11,6 +11,7 @@ using OSR.Infrastructure.Email;
 using OSR.Infrastructure.Persistance.Sql;
 using OSR.Infrastructure.Persistance.Sql.Repositories;
 using System;
+using Microsoft.AspNetCore.Mvc;
 using OSR.Web.Api.Extensions.Swagger;
 
 namespace OSR.Web.Api
@@ -27,7 +28,7 @@ namespace OSR.Web.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().SetCompatibilityVersion( CompatibilityVersion.Version_2_1 );
 
             // Add Entityframework
             services.AddEntityFrameworkSqlServer();
@@ -60,6 +61,11 @@ namespace OSR.Web.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
+            app.UseHttpsRedirection();
 
             app.UseSwagger();
             app.UseSwaggerUI( options =>

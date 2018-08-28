@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>6ca166ef-bccf-4762-b9d5-7287b94f381f</ProjectGuid>
+    <ProjectGuid>d2fa82e8-c406-4659-84d4-09ed71c54ae5</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>osr.web.api</DockerServiceName>
