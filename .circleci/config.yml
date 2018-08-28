@@ -6,12 +6,17 @@ jobs:
     steps:
       - checkout
       - run: dotnet build  ./DDD.OnlineSchoolRegistration.sln
+      - run: 
+          name: Build application Docker image
+          command: |
+            docker build -t wapp ./wapp/.
   test:
     docker:
       - image: microsoft/dotnet:2.1.401-sdk
     steps:
       - checkout
       - run: dotnet test ./Tests/OSR.Domain.UnitTests
+  
 workflows:
   version: 2
   build_and_test:
