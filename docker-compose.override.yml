@@ -3,6 +3,6 @@ version: '3.4'
 services:
   osr.web.api:
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Docker
     ports:
       - "80"
